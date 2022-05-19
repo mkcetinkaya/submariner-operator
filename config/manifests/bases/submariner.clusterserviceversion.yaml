@@ -121,6 +121,7 @@ spec:
     * **ceIPSecDebug**: *'true'* to enable logging IPsec debugging information - verbose logging from the IPsec daemon.
     * **ceIPSecIKEPort**: The IPsec IKE port (500 usually).
     * **ceIPSecNATTPort**: The IPsec NAT traversal port (4500 usually).
+    * **ceNatDiscovery**: The IPsec NAT Discovery port (4490 usually).
     * **repository**: The container repository to use.
     * **version**: The container version to use.
     * **imageOverrides**: A string map that overrides the images by defining a path for each component.
