@@ -1,4 +1,4 @@
-module github.com/mkcetinkaya/submariner-operator
+module github.com/submariner-io/submariner-operator
 
 go 1.17
 
