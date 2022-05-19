@@ -21,6 +21,7 @@ spec:
   ceIPSecDebug: false
   ceIPSecIKEPort: 500
   ceIPSecNATTPort: 4500
+  ceNatDiscovery: 4490
   namespace: "$(SUBMARINER_OPERATOR_NAMESPACE)"
   repository: repo
   version: "$(VERSION)"
