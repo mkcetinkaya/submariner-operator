@@ -33,7 +33,7 @@ const (
 	loadBalancerName      = "submariner-gateway"
 	gatewayStatusLabel    = "gateway.submariner.io/status"
 	encapsPortName        = "cable-encaps"
-	nattDiscoveryPortName = "natt-discovery"
+	nattDiscoveryDynamicPortName = "natt-discovery"
 )
 
 // nolint:wrapcheck // No need to wrap errors here.
