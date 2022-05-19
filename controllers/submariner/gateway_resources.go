@@ -171,7 +171,7 @@ func newGatewayPodTemplate(cr *v1alpha1.Submariner, name string, podSelectorLabe
 							Protocol:      corev1.ProtocolUDP,
 						},
 						{
-							Name:          nattDiscoveryPortName,
+							Name:          nattDiscoveryDynamicPortName,
 							HostPort:      int32(cr.Spec.CeNatDiscovery),
 							ContainerPort: int32(cr.Spec.CeNatDiscovery),
 							Protocol:      corev1.ProtocolUDP,
