@@ -71,7 +71,7 @@ func newLoadBalancerService(instance *v1alpha1.Submariner) *corev1.Service {
 					Protocol:   corev1.ProtocolUDP,
 				},
 				{
-					Name:       nattDiscoveryPortName,
+					Name:       nattDiscoveryDynamicPortName,
 					Port:       int32(instance.Spec.CeNatDiscovery),
 					TargetPort: intstr.IntOrString{Type: intstr.Int, IntVal: int32(instance.Spec.CeNatDiscovery)},
 					Protocol:   corev1.ProtocolUDP,
