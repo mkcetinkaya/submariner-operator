@@ -238,7 +238,7 @@ func newGatewayPodTemplate(cr *v1alpha1.Submariner, name string, podSelectorLabe
 	
 	if cr.Spec.CeNatDiscovery != 0 {
 		podTemplate.Spec.Containers[0].Env = append(podTemplate.Spec.Containers[0].Env,
-			corev1.EnvVar{Name: "CeNatDiscovery", Value: strconv.Itoa(cr.Spec.CeNatDiscovery)})
+			corev1.EnvVar{Name: "CE_NAT_DISCOVERY", Value: strconv.Itoa(cr.Spec.CeNatDiscovery)})
 	}
 
 	podTemplate.Spec.Containers[0].Env = append(podTemplate.Spec.Containers[0].Env,
