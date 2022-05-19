@@ -167,6 +167,7 @@ func (t *testDriver) assertUninstallGatewayDaemonSet() *appsv1.DaemonSet {
 func (t *testDriver) assertGatewayDaemonSetEnv(submariner *operatorv1.Submariner, envMap map[string]string) {
 	Expect(envMap).To(HaveKeyWithValue("CE_IPSEC_PSK", submariner.Spec.CeIPSecPSK))
 	Expect(envMap).To(HaveKeyWithValue("CE_IPSEC_NATTPORT", strconv.Itoa(submariner.Spec.CeIPSecNATTPort)))
+	Expect(envMap).To(HaveKeyWithValue("CE_NAT_DISCOVERY", strconv.Itoa(submariner.Spec.CeNatDiscovery)))
 	Expect(envMap).To(HaveKeyWithValue(broker.EnvironmentVariable("RemoteNamespace"), submariner.Spec.BrokerK8sRemoteNamespace))
 	Expect(envMap).To(HaveKeyWithValue(broker.EnvironmentVariable("ApiServer"), submariner.Spec.BrokerK8sApiServer))
 	Expect(envMap).To(HaveKeyWithValue(broker.EnvironmentVariable("ApiServerToken"), submariner.Spec.BrokerK8sApiServerToken))
@@ -265,6 +266,7 @@ func newSubmariner() *operatorv1.Submariner {
 			Repository:               "quay.io/submariner",
 			Version:                  "0.12.0",
 			CeIPSecNATTPort:          4500,
+			CeNatDiscovery:           4490,
 			CeIPSecIKEPort:           500,
 			CeIPSecPSK:               "DJaA2kVW72w8kjQCEpzkDhwZuniDwgePKFE7FaxVNMWqbpmT2qvp68XW52MO70ho",
 			BrokerK8sRemoteNamespace: "submariner-broker",
