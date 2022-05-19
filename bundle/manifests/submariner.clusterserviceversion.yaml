@@ -35,6 +35,7 @@ metadata:
             "ceIPSecDebug": false,
             "ceIPSecIKEPort": 500,
             "ceIPSecNATTPort": 4500,
+            "ceNatDiscovery": 4490,
             "ceIPSecPSK": "$(IPSEC_PSK)",
             "clusterCIDR": "192.168.67.0/24",
             "clusterID": "cluster1",
@@ -210,6 +211,12 @@ spec:
       - description: The IPsec NAT traversal port (4500 usually)
         displayName: IPSec NATT Port
         path: ceIPSecNATTPort
+        x-descriptors:
+        - urn:alm:descriptor:com.tectonic.ui:number
+        - urn:alm:descriptor:com.tectonic.ui:fieldDependency:natEnabled:true
+      - description: The IPsec NAT Discovery port (44490 usually)
+        displayName: IPSec NAT Discovery Port
+        path: ceNatDiscovery
         x-descriptors:
         - urn:alm:descriptor:com.tectonic.ui:number
         - urn:alm:descriptor:com.tectonic.ui:fieldDependency:natEnabled:true
