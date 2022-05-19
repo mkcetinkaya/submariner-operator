@@ -235,6 +235,11 @@ func newGatewayPodTemplate(cr *v1alpha1.Submariner, name string, podSelectorLabe
 		podTemplate.Spec.Containers[0].Env = append(podTemplate.Spec.Containers[0].Env,
 			corev1.EnvVar{Name: "CE_IPSEC_NATTPORT", Value: strconv.Itoa(cr.Spec.CeIPSecNATTPort)})
 	}
+	
+	if cr.Spec.CeNatDiscovery != 0 {
+		podTemplate.Spec.Containers[0].Env = append(podTemplate.Spec.Containers[0].Env,
+			corev1.EnvVar{Name: "CeNatDiscovery", Value: strconv.Itoa(cr.Spec.CeNatDiscovery)})
+	}
 
 	podTemplate.Spec.Containers[0].Env = append(podTemplate.Spec.Containers[0].Env,
 		corev1.EnvVar{Name: "CE_IPSEC_PREFERREDSERVER", Value: strconv.FormatBool(cr.Spec.CeIPSecPreferredServer ||
